@@ -1,7 +1,7 @@
-import React from 'react';
-import { useState } from 'react';
-import css from './productCard.module.css';
-import Favorite from '../../favorite.svg';
+import React from "react";
+import { useState } from "react";
+import css from "./productCard.module.css";
+import Favorite from "../../favorite.svg";
 
 function ProductCard({
   product,
@@ -46,7 +46,7 @@ function ProductCard({
   );
 
   const updateHeart = () => {
-    if (isFavorite === 'no') {
+    if (isFavorite === "no") {
       setFavorites([...favorites, product.id]);
     } else {
       let index = favorites.indexOf(product.id);
@@ -63,9 +63,9 @@ function ProductCard({
         <img className={css.image} src={product.image} alt={product.title} />
       </div>
       <div className={css.priceContainer}>
-        <span className={css.price}>£{product.price}</span>
+        <span className={css.price}>£{product.price.toFixed(2)}</span>
         <div onClick={updateHeart}>
-          {isFavorite === 'yes' ? filledHeart : hollowHeart}
+          {isFavorite === "yes" ? filledHeart : hollowHeart}
         </div>
       </div>
 
@@ -75,7 +75,7 @@ function ProductCard({
         <p className={css.description}>{product.description}</p>
       </div>
     </div>
-  )
+  );
 }
 
-export default ProductCard
+export default ProductCard;
