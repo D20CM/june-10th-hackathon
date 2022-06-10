@@ -1,10 +1,12 @@
-import React from 'react';
-import css from './productCard.module.css';
-import Favorite from '../../favorite.svg';
+import React from "react";
+import { useState } from "react";
+import css from "./productCard.module.css";
+import Favorite from "../../favorite.svg";
 
-function ProductCard({ product }) {
+function ProductCard({ product, isFavorite }) {
   return (
     <div className={css.productCard}>
+      <p>What?{isFavorite}</p>
       <div className={css.imageContainer}>
         <img className={css.image} src={product.image} alt={product.title} />
       </div>

@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import ProductCard from './components/ProductCard/ProductCard';
-import ShoppingCart from './components/ShoppingCart/ShoppingCart';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import ProductCard from "./components/ProductCard/ProductCard";
+import ShoppingCart from "./components/ShoppingCart/ShoppingCart";
+import "./App.css";
 
 function App() {
   //useStates
-  const [items, setItems] = useState('');
+  const [items, setItems] = useState("");
+  const [favorites, setFavorites] = useState({ favorites: [3, 5, 9] });
 
   useEffect(() => {
     async function fetchData() {
@@ -16,13 +17,28 @@ function App() {
     fetchData();
   }, []);
 
+  const isFavorite = (id) => {
+    if (favorites.favorites.indexOf(id) !== -1) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
   return (
     <div className="App">
       {/* <h1>E-commerce site</h1> */}
       <div className="items-container">
         {items &&
           items.map((item) => {
-            return <ProductCard key={item.id} product={item} />;
+            const checkFavorite = isFavorite(item.id);
+            return (
+              <ProductCard
+                key={item.id}
+                product={item}
+                isFavorite={checkFavorite}
+              />
+            );
           })}
       </div>
       {/* <div className="shopping-cart">
