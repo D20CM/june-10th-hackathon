@@ -6,7 +6,7 @@ import "./App.css";
 function App() {
   //useStates
   const [items, setItems] = useState("");
-  const [favorites, setFavorites] = useState({ favorites: [3, 5, 9] });
+  const [favorites, setFavorites] = useState([3, 5, 9]);
 
   useEffect(() => {
     async function fetchData() {
@@ -18,16 +18,26 @@ function App() {
   }, []);
 
   const isFavorite = (id) => {
-    if (favorites.favorites.indexOf(id) !== -1) {
-      return true;
+    if (favorites.indexOf(id) !== -1) {
+      return "yes";
     } else {
-      return false;
+      return "no";
     }
   };
+
+  function updateFavorites(id) {
+    if (isFavorite === "no") {
+      setFavorites(...favorites, id);
+    } else {
+      let index = favorites.indexOf(id);
+      setFavorites(...favorites.slice(0, index), favorites.slice(index));
+    }
+  }
 
   return (
     <div className="App">
       {/* <h1>E-commerce site</h1> */}
+      <p>{favorites}</p>
       <div className="items-container">
         {items &&
           items.map((item) => {
@@ -37,6 +47,8 @@ function App() {
                 key={item.id}
                 product={item}
                 isFavorite={checkFavorite}
+                favorites={favorites}
+                updateFavorites={updateFavorites}
               />
             );
           })}
