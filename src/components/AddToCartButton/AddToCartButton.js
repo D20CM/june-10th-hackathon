@@ -5,7 +5,14 @@ function AddToCartButton(product) {
   function addProductToCart(product) {
     //do something here
   }
-  return <button onClick={() => addProductToCart(product)}>Add To Cart</button>;
+  return (
+    <button
+      className={css.addToCartButton}
+      onClick={() => addProductToCart(product)}
+    >
+      Add To Cart
+    </button>
+  );
 }
 
 export default AddToCartButton;
