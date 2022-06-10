@@ -1,12 +1,11 @@
-import React from "react";
-import { useState } from "react";
-import css from "./productCard.module.css";
-import Favorite from "../../favorite.svg";
+import React from "react"
+import { useState } from "react"
+import css from "./productCard.module.css"
+import Favorite from "../../favorite.svg"
 
 function ProductCard({ product, isFavorite }) {
   return (
     <div className={css.productCard}>
-      <p>What?{isFavorite}</p>
       <div className={css.imageContainer}>
         <img className={css.image} src={product.image} alt={product.title} />
       </div>
@@ -31,9 +30,11 @@ function ProductCard({ product, isFavorite }) {
 
       <h2 className={css.productTitle}>{product.title}</h2>
       <p className={css.category}>Category: {product.category}</p>
-      <p className={css.description}>{product.description}</p>
+      <div className={css.container}>
+        <p className={css.description}>{product.description}</p>
+      </div>
     </div>
-  );
+  )
 }
 
-export default ProductCard;
+export default ProductCard
