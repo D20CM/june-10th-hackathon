@@ -1,5 +1,8 @@
 .productCard{
-
+width: 300px;
+border: 2px solid black;
+padding: 1em;
+margin: 1em;
 }
 
 .productTitle{
@@ -15,9 +18,9 @@
 }
 
 .image{
-
+max-width: 100%;
 }
 
 .category{
-    
+
 }

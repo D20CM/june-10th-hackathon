@@ -1,7 +1,7 @@
 import React from "react";
 import css from "./productCard.module.css";
 
-function ProductCard(product) {
+function ProductCard({ product }) {
   return (
     <div className={css.productCard}>
       <h2 className={css.productTitle}>{product.title}</h2>
