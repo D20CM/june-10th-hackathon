@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import css from "./productCard.module.css";
 import Favorite from "../../favorite.svg";
+import AddToCartButton from "../AddToCartButton/AddToCartButton";
 
 function ProductCard({
   product,
@@ -74,6 +75,7 @@ function ProductCard({
       <div className={css.container}>
         <p className={css.description}>{product.description}</p>
       </div>
+      <AddToCartButton />
     </div>
   );
 }
