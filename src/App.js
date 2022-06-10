@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import ProductCard from './components/ProductCard/ProductCard';
-import ShoppingCart from './components/ShoppingCart/ShoppingCart';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import ProductCard from "./components/ProductCard/ProductCard";
+import ShoppingCart from "./components/ShoppingCart/ShoppingCart";
+import Header from "./components/Header/Header";
+import "./App.css";
 
 function App() {
   //useStates
-  const [items, setItems] = useState('');
+  const [items, setItems] = useState("");
   const [favorites, setFavorites] = useState([]);
 
   useEffect(() => {
@@ -19,9 +20,9 @@ function App() {
 
   const isFavorite = (id) => {
     if (favorites.indexOf(id) !== -1) {
-      return 'yes';
+      return "yes";
     } else {
-      return 'no';
+      return "no";
     }
   };
 
@@ -36,6 +37,7 @@ function App() {
 
   return (
     <div className="App">
+      <Header />
       {/* <h1>E-commerce site</h1> */}
       <div className="items-container">
         {items &&
