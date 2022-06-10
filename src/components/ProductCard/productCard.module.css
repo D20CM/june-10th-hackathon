@@ -24,7 +24,7 @@
   text-align: left;
   color: #757070;
   display: block;
-  overflow-y: scroll;
+  overflow-y: hidden;
   overflow-x: hidden;
   overflow-block: scroll;
   max-height: calc(40%);
