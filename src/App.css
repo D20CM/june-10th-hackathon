@@ -18,15 +18,15 @@
 }
 
 .items-container {
-  /* display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(358px, 1fr)); */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(358px, 1fr)); 
   grid-column-gap: 1rem;
   grid-row-gap: 1rem;
   justify-content: center;
   margin: 0 auto;
 }
 
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
   .items-container {
     display: grid;
     grid-template-columns: 40% 40%;
@@ -37,5 +37,5 @@
   .items-container {
     display: grid;
     grid-template-columns: 32% 32% 32%;
-  }
-}
+  }} */
+

@@ -8,7 +8,7 @@ function App() {
   //useStates
   const [items, setItems] = useState("");
   const [favorites, setFavorites] = useState([]);
-
+  console.log(favorites);
   useEffect(() => {
     async function fetchData() {
       const response = await fetch(`https://fakestoreapi.com/products`);
