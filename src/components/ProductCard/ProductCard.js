@@ -71,9 +71,11 @@ function ProductCard({
 
       <h2 className={css.productTitle}>{product.title}</h2>
       <p className={css.category}>Category: {product.category}</p>
-      <p className={css.description}>{product.description}</p>
+      <div className={css.container}>
+        <p className={css.description}>{product.description}</p>
+      </div>
     </div>
-  );
+  )
 }
 
-export default ProductCard;
+export default ProductCard
