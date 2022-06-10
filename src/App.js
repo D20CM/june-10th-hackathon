@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
-import ProductCard from "./components/ProductCard/ProductCard";
-import ShoppingCart from "./components/ShoppingCart/ShoppingCart";
-import "./App.css";
+import React, { useState, useEffect } from 'react';
+import ProductCard from './components/ProductCard/ProductCard';
+import ShoppingCart from './components/ShoppingCart/ShoppingCart';
+import './App.css';
 
 function App() {
   //useStates
-  const [items, setItems] = useState("");
-  const [favorites, setFavorites] = useState({ favorites: [3, 5, 9] });
+  const [items, setItems] = useState('');
+  const [favorites, setFavorites] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
@@ -18,12 +18,21 @@ function App() {
   }, []);
 
   const isFavorite = (id) => {
-    if (favorites.favorites.indexOf(id) !== -1) {
-      return true;
+    if (favorites.indexOf(id) !== -1) {
+      return 'yes';
     } else {
-      return false;
+      return 'no';
     }
   };
+
+  // function updateFavorites(id) {
+  //   if (isFavorite === "no") {
+  //     setFavorites(...favorites, id);
+  //   } else {
+  //     let index = favorites.indexOf(id);
+  //     setFavorites(...favorites.slice(0, index), favorites.slice(index));
+  //   }
+  // }
 
   return (
     <div className="App">
@@ -37,6 +46,8 @@ function App() {
                 key={item.id}
                 product={item}
                 isFavorite={checkFavorite}
+                favorites={favorites}
+                setFavorites={setFavorites}
               />
             );
           })}
