@@ -1,21 +1,53 @@
 .productCard {
-  border: 2px solid black;
   padding: 1em;
   margin: 1em;
+  box-shadow: 0 5px 20px rgb(88 88 88 / 20%);
+  border-radius: 1rem;
 }
 
 .productTitle {
+  font-size: 1.3rem;
+  color: #1d1e4b;
+  text-align: left;
+  margin: 1rem 0 0.5rem 0;
 }
 
 .price {
+  font-size: 2rem;
+  color: #e31c47;
+  font-weight: 900;
 }
 
 .description {
+  text-align: left;
+  color: #757070;
+  overflow: hidden;
+  white-space: pre-wrap;
+  text-overflow: ellipsis;
+  height: 200px;
 }
 
 .image {
   max-width: 100%;
+  max-height: 70%;
 }
 
 .category {
+  text-align: left;
+  color: #ababab;
+  font-size: 1.3rem;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+.imageContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50%;
+}
+
+.priceContainer {
+  display: flex;
+  justify-content: space-between;
 }
