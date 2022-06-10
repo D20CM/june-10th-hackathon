@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
-import ProductCard from "./components/ProductCard/ProductCard";
-import "./App.css";
+import React, { useState, useEffect } from 'react';
+import ProductCard from './components/ProductCard/ProductCard';
+import ShoppingCart from './components/ShoppingCart/ShoppingCart';
+import './App.css';
 
 function App() {
   //useStates
-  const [items, setItems] = useState("");
+  const [items, setItems] = useState('');
 
   useEffect(() => {
     async function fetchData() {
@@ -17,10 +18,16 @@ function App() {
 
   return (
     <div className="App">
-      <h1>E-commerce site</h1>
-      {items.map((item) => {
-        return <ProductCard product={item} />;
-      })}
+      {/* <h1>E-commerce site</h1> */}
+      <div className="items-container">
+        {items &&
+          items.map((item) => {
+            return <ProductCard key={item.id} product={item} />;
+          })}
+      </div>
+      {/* <div className="shopping-cart">
+        <ShoppingCart />
+      </div> */}
     </div>
   );
 }

@@ -1,26 +1,21 @@
-.productCard{
-width: 300px;
-border: 2px solid black;
-padding: 1em;
-margin: 1em;
+.productCard {
+  border: 2px solid black;
+  padding: 1em;
+  margin: 1em;
 }
 
-.productTitle{
-
+.productTitle {
 }
 
-.price{
-
+.price {
 }
 
-.description{
-
+.description {
 }
 
-.image{
-max-width: 100%;
+.image {
+  max-width: 100%;
 }
 
-.category{
-
+.category {
 }
