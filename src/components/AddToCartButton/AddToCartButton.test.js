@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import AddTocardButton from './AddToCartButton';
 
 test('App renders to screen', () => {
-  render(<App />);
-  const mainContainer = screen.getByTestId('App');
+  render(<AddTocardButton />);
+  const mainContainer = screen.getByTestId('AddTocardButton');
   expect(mainContainer).toBeInTheDocument();
 });

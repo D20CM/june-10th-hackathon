@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ProductCard from './components/ProductCard/ProductCard';
-import ShoppingCart from './components/ShoppingCart/ShoppingCart';
+
 import Header from './components/Header/Header';
 import './App.css';
 
@@ -27,17 +27,8 @@ function App() {
     }
   };
 
-  // function updateFavorites(id) {
-  //   if (isFavorite === "no") {
-  //     setFavorites(...favorites, id);
-  //   } else {
-  //     let index = favorites.indexOf(id);
-  //     setFavorites(...favorites.slice(0, index), favorites.slice(index));
-  //   }
-  // }
-
   return (
-    <>
+    <div data-testid="App">
       <Header />
       <div className="App">
         {/* <h1>E-commerce site</h1> */}
@@ -56,11 +47,8 @@ function App() {
               );
             })}
         </div>
-        {/* <div className="shopping-cart">
-        <ShoppingCart />
-      </div> */}
       </div>
-    </>
+    </div>
   );
 }
 

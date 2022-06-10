@@ -1,5 +1,5 @@
-import React from "react";
-import css from "./addToCartButton.module.css";
+import React from 'react';
+import css from './addToCartButton.module.css';
 
 function AddToCartButton(product) {
   function addProductToCart(product) {
@@ -7,6 +7,7 @@ function AddToCartButton(product) {
   }
   return (
     <button
+      data-testid="AddTocardButton"
       className={css.addToCartButton}
       onClick={() => addProductToCart(product)}
     >
